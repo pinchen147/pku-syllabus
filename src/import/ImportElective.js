@@ -41,14 +41,16 @@ export class ImportElective extends Component {
         let co=Array.from(table.querySelectorAll('.datagrid-even, .datagrid-odd, .datagrid-all')).map((row,idx)=>{
             let name=row.querySelector('td:nth-child(1)').textContent;
 
-            let info_elem=row.querySelector('td:nth-child(8)');
+            // 教室信息列从第8列变为第9列（新增“自选P/NP”列）。
+            let info_elem=row.querySelector('td:nth-child(9)');
             if(info_elem.querySelector('span'))
                 info_elem=info_elem.querySelector('span');
             let infos=Array.from(info_elem.childNodes)
                 .filter((node)=>node.nodeName.toLowerCase()==='#text')
                 .map((node)=>node.textContent);
 
-            let status_elem=row.querySelector('td:nth-child(9)');
+            // 选课结果列从第9列移动到第11列。
+            let status_elem=row.querySelector('td:nth-child(11)');
             let status=status_elem?status_elem.textContent:'?';
 
             if(status==='未选上')
@@ -56,13 +58,13 @@ export class ImportElective extends Component {
 
             let desc_items=[];
             if(this.state.desc_checked.indexOf(this.DESC_KEY.teacher)!==-1)
-                desc_items.push(row.querySelector('td:nth-child(5)').textContent.replace(/[,，、].+$/,'等').replace(/\(.+\)/,''));
+                desc_items.push(row.querySelector('td:nth-child(6)').textContent.replace(/[,，、].+$/,'等').replace(/\(.+\)/,''));
             if(this.state.desc_checked.indexOf(this.DESC_KEY.classid)!==-1)
-                desc_items.push(row.querySelector('td:nth-child(6)').textContent+'班');
+                desc_items.push(row.querySelector('td:nth-child(7)').textContent+'班');
             if(this.state.desc_checked.indexOf(this.DESC_KEY.coursetype)!==-1)
-                desc_items.push(row.querySelector('td:nth-child(2)').textContent);
+                desc_items.push(row.querySelector('td:nth-child(3)').textContent);
             if(this.state.desc_checked.indexOf(this.DESC_KEY.credits)!==-1)
-                desc_items.push(row.querySelector('td:nth-child(3)').textContent.replace(/\.0$/,'')+'学分');
+                desc_items.push(row.querySelector('td:nth-child(4)').textContent.replace(/\.0$/,'')+'学分');
 
             let desc=desc_items.join('，');
 
