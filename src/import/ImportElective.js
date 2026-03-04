@@ -37,11 +37,14 @@ export class ImportElective extends Component {
         if(!table)
             throw new Error('找不到选课结果列表，请确保选中了整个表格！');
 
+        let headers=Array.from(table.querySelectorAll('.datagrid-header th')).map((th)=>th.textContent.trim());
+        let statusCol=headers.indexOf('选课结果')+1;
+        if(statusCol===0) statusCol=10; // fallback
+
         let skip_co=[];
         let co=Array.from(table.querySelectorAll('.datagrid-even, .datagrid-odd, .datagrid-all')).map((row,idx)=>{
-            let name=row.querySelector('td:nth-child(1)').textContent;
+            let name=row.querySelector('td:nth-child(2)').textContent;
 
-            // 教室信息列从第8列变为第9列（新增“自选P/NP”列）。
             let info_elem=row.querySelector('td:nth-child(9)');
             if(info_elem.querySelector('span'))
                 info_elem=info_elem.querySelector('span');
@@ -49,8 +52,7 @@ export class ImportElective extends Component {
                 .filter((node)=>node.nodeName.toLowerCase()==='#text')
                 .map((node)=>node.textContent);
 
-            // 选课结果列从第9列移动到第11列。
-            let status_elem=row.querySelector('td:nth-child(11)');
+            let status_elem=row.querySelector('td:nth-child('+statusCol+')');
             let status=status_elem?status_elem.textContent:'?';
 
             if(status==='未选上')
