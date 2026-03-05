@@ -1,7 +1,0 @@
-td.ant-picker-cell-week {
-    color: rgba(0, 0, 255, .4);
-    font-style: italic;
-    text-decoration: underline;
-    transform: scale(.7) translateX(-.3em);
-    pointer-events: none;
-}

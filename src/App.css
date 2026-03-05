@@ -1,12 +1,12 @@
-.main-margin {
-    margin: 1em auto;
-    padding-left: 1em;
-    padding-right: 1em;
-    max-width: 950px;
+.app-layout {
+  display: flex;
+  min-height: 100vh;
 }
 
-@media screen and (min-width: 768px) {
-    .next-to-sider {
-        margin-left: 170px;
-    }
+.app-main {
+  margin-left: var(--sidebar-width);
+  flex: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }

@@ -1,0 +1,94 @@
+.home-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--space-xl);
+}
+
+.home-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.home-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-1);
+  margin: 0 0 4px;
+}
+
+.home-card-desc {
+  font-size: 13px;
+  color: var(--color-text-2);
+  margin: 0 0 var(--space-md);
+}
+
+.home-semester-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.home-action-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.home-action-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.home-action-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: #F3F4F6;
+  color: var(--color-text-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.home-action-icon-primary {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.home-action-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-1);
+  margin: 0 0 2px;
+}
+
+.home-action-desc {
+  font-size: 13px;
+  color: var(--color-text-2);
+  margin: 0;
+}
+
+/* Keep week picker styling */
+td.ant-picker-cell-week {
+  color: rgba(0, 0, 255, .4);
+  font-style: italic;
+  text-decoration: underline;
+  transform: scale(.7) translateX(-.3em);
+  pointer-events: none;
+}

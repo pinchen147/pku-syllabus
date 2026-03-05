@@ -1,0 +1,41 @@
+.about-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--space-xl);
+}
+
+.about-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+
+.about-card p {
+  margin: var(--space-md) 0 0;
+  line-height: 1.7;
+}
+
+.about-card p:first-child {
+  margin-top: 0;
+}
+
+.about-figure {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: var(--space-lg) auto;
+  border-radius: var(--radius-md);
+}
+
+.about-disclaimer {
+  color: var(--color-text-3);
+  font-size: 13px;
+}
+
+.about-credit {
+  color: var(--color-text-3);
+  font-size: 13px;
+  text-align: center;
+  margin-top: var(--space-lg) !important;
+}

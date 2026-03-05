@@ -1,0 +1,247 @@
+.edit-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* TopBar actions */
+.edit-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.edit-week-nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.edit-week-btn {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.edit-week-btn:hover:not(:disabled) {
+  background: #F3F4F6;
+}
+
+.edit-week-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.edit-week-pill {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-1);
+  padding: 4px 12px;
+  background: #F3F4F6;
+  border-radius: 14px;
+  white-space: nowrap;
+}
+
+.edit-filter {
+  display: flex;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.edit-filter-btn {
+  padding: 4px 12px;
+  border: none;
+  background: var(--color-surface);
+  color: var(--color-text-2);
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.edit-filter-btn:not(:last-child) {
+  border-right: 1px solid var(--color-border);
+}
+
+.edit-filter-btn:hover {
+  background: #F3F4F6;
+}
+
+.edit-filter-btn-active {
+  background: var(--color-primary);
+  color: white;
+}
+
+.edit-filter-btn-active:hover {
+  background: var(--color-primary-hover);
+}
+
+/* Calendar Grid */
+.edit-grid-wrapper {
+  flex: 1;
+  overflow: auto;
+  padding: var(--space-md);
+}
+
+.edit-grid {
+  display: grid;
+  grid-template-columns: 56px repeat(7, 1fr);
+  grid-template-rows: 36px repeat(12, 1fr);
+  min-height: calc(100vh - var(--topbar-height) - 2 * var(--space-md));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-surface);
+  position: relative;
+}
+
+.edit-grid-corner {
+  grid-row: 1;
+  grid-column: 1;
+  background: #FAFAFA;
+  border-bottom: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+}
+
+.edit-grid-day-header {
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-1);
+  background: #FAFAFA;
+  border-bottom: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+}
+
+.edit-grid-day-header:last-child {
+  border-right: none;
+}
+
+.edit-grid-day-header.edit-grid-weekend {
+  color: var(--color-text-3);
+}
+
+.edit-grid-time {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid #F3F4F6;
+  background: #FAFAFA;
+}
+
+.edit-grid-period {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-1);
+}
+
+.edit-grid-time-label {
+  font-size: 10px;
+  color: var(--color-text-3);
+}
+
+.edit-grid-cell {
+  border-right: 1px solid #F3F4F6;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.edit-grid-cell.edit-grid-weekend {
+  background: #FDFDFD;
+}
+
+/* Course blocks */
+.edit-course-block {
+  margin: 2px;
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  font-size: 12px;
+  line-height: 1.3;
+  transition: opacity 0.15s;
+  z-index: 1;
+}
+
+.edit-course-block:hover {
+  opacity: 0.85;
+}
+
+.edit-course-name {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.edit-course-room {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.edit-course-badge {
+  font-size: 10px;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+/* Modal form */
+.edit-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.edit-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.edit-form-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-2);
+}
+
+.edit-form-row {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.edit-form-flex {
+  flex: 1;
+}
+
+.edit-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+}
+
+.edit-modal-right {
+  display: flex;
+  gap: var(--space-sm);
+}
